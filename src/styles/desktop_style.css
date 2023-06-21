@@ -1,0 +1,132 @@
+.form_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  color: #212529;
+  font-size: 2.5rem;
+}
+
+.button {
+  margin: 0.5em;
+  font-weight: bold;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 3rem;
+  background-image: linear-gradient(
+    131deg,
+    #ffd340,
+    #ff923c,
+    #ff923c,
+    #ff923c
+  );
+  background-size: 300% 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em #ff923cba;
+  background-size: 100% 100%;
+  transform: translateY(-0.15em);
+}
+
+button {
+  margin: 0.5em;
+  font-weight: bold;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 3rem;
+  background-image: linear-gradient(
+    131deg,
+    rgb(182, 244, 146),
+    rgb(51, 139, 147),
+    rgb(0, 93, 133)
+  );
+  background-size: 300% 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em rgb(0, 181, 149);
+  background-size: 100% 100%;
+  transform: translateY(-0.15em);
+}
+
+input,
+textarea {
+  color: #212529;
+  font-size: 1.1rem;
+  margin: 0.5em 0.5em 0.5em 0.5em;
+  background-color: #f2f6f8;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
+  padding: 0.5rem 3.5rem;
+}
+
+input {
+  height: 3.3rem;
+}
+
+textarea {
+  height: 20rem;
+  width: 50%;
+  max-width: 40rem;
+  min-width: 10rem;
+}
+
+.betreff input {
+  width: 50%;
+  max-width: 40rem;
+  min-width: 10rem;
+}
+
+.betreff {
+  width: 100%;
+  min-width: 10rem;
+}
+
+.form_details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red;
+}
+
+.CharCount {
+  align-self: center;
+  text-align: end;
+  width: 60%;
+  max-width: 45rem;
+  min-width: 10rem;
+}
+
+.buttonsContainer {
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 45rem;
+  min-width: 10rem;
+}
