@@ -1,0 +1,101 @@
+@media screen and (min-width: 800px) and (max-width: 1180px) {
+  input {
+    padding: 0.5rem 3.5rem;
+    height: 2rem;
+    width: 70%;
+  }
+  input,
+  textarea {
+    font-size: 0.9em;
+    padding: 0.5em 1.5em;
+  }
+
+  .email {
+    width: 100%;
+  }
+  .email input {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 799px) {
+  input {
+    padding: 0.5rem 3.5rem;
+    height: 2rem;
+    width: 80%;
+    max-width: 10rem;
+    min-width: 8rem;
+  }
+  input,
+  textarea {
+    font-size: 0.9em;
+    padding: 0.5em 1.5em;
+  }
+  .email {
+    width: 100%;
+  }
+  .email input {
+    width: 80%;
+    max-width: 20rem;
+    min-width: 15rem;
+  }
+  .form_details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .buttonsContainer {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em;
+  }
+  textarea {
+    width: 80%;
+    max-width: 20rem;
+    min-width: 15rem;
+  }
+
+  .betreff input {
+    width: 80%;
+    max-width: 20rem;
+    min-width: 15rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  input {
+    padding: 0.5rem 3.5rem;
+    height: 2rem;
+    width: 80%;
+  }
+  input,
+  textarea {
+    font-size: 0.9em;
+    padding: 0.5em 1.5em;
+  }
+  .email {
+    width: 100%;
+  }
+  .email input {
+    width: 80%;
+  }
+  .form_details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .buttonsContainer {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+  textarea {
+    height: 20rem;
+    width: 80%;
+  }
+
+  .betreff input {
+    width: 80%;
+  }
+}

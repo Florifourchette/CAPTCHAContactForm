@@ -4,6 +4,7 @@ import '../src/styles/desktop_style.css';
 import { Form } from 'semantic-ui-react';
 import validateEmail from './utils/EmailValidation';
 import validateMessage from './utils/MessageValidation';
+import '../src/styles/media_style.css';
 
 function App() {
   const [answer, setAnswer] = useState({
@@ -17,7 +18,7 @@ function App() {
   const [messageCharCount, setMessageCharCount] = useState(null);
   const [formsubmitted, setformSubmitted] = useState(null);
   const [formDeleted, setFormDeleted] = useState(null);
-  const [captchaDOne, setCaptchaDone] = useState(false);
+  const [captchaDone, setCaptchaDone] = useState(false);
   const siteKey = process.env.REACT_APP_SITE_KEY;
 
   const handleChange = (e) => {
@@ -93,6 +94,7 @@ function App() {
             />
           </div>
           <Form.Input
+            className="email"
             name="email"
             placeholder="E-Mail-Adresse"
             value={answer.email}
@@ -137,8 +139,11 @@ function App() {
           <p className="invalid">❌ Your message is too long</p>
         )}
         <div className="buttonsContainer">
-          <ReCAPTCHA sitekey={siteKey} onChange={handleCaptcha} />,
-          {captchaDOne ? <Form.Button>Submit</Form.Button> : <></>}
+          {!captchaDone ? (
+            <ReCAPTCHA sitekey={siteKey} onChange={handleCaptcha} />
+          ) : (
+            <Form.Button>Submit</Form.Button>
+          )}
           {formsubmitted ? (
             <p className="invalid">✅ Form submitted successfully</p>
           ) : formsubmitted === null || formDeleted ? (
