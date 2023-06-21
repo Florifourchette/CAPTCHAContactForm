@@ -41,10 +41,10 @@ function App() {
     if (
       emailValidated &&
       messageCharCount &&
-      answer.vorname != '' &&
-      answer.nachname != '' &&
-      answer.betreff != '' &&
-      answer.message != ''
+      answer.vorname !== '' &&
+      answer.nachname !== '' &&
+      answer.betreff !== '' &&
+      answer.message !== ''
     ) {
       setformSubmitted(true);
       console.log(answer);
