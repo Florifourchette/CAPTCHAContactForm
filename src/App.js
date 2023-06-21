@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import '../src/styles/desktop_style.css';
 import { Form } from 'semantic-ui-react';
 import validateEmail from './utils/EmailValidation';
@@ -16,6 +17,8 @@ function App() {
   const [messageCharCount, setMessageCharCount] = useState(null);
   const [formsubmitted, setformSubmitted] = useState(null);
   const [formDeleted, setFormDeleted] = useState(null);
+  const [captchaDOne, setCaptchaDone] = useState(false);
+  const siteKey = process.env.REACT_APP_SITE_KEY;
 
   const handleChange = (e) => {
     setFormDeleted(null);
@@ -66,7 +69,9 @@ function App() {
     setFormDeleted(true);
   };
 
-  console.log(formsubmitted);
+  const handleCaptcha = () => {
+    setCaptchaDone(true);
+  };
 
   return (
     <>
@@ -132,7 +137,8 @@ function App() {
           <p className="invalid">❌ Your message is too long</p>
         )}
         <div className="buttonsContainer">
-          <Form.Button>Submit</Form.Button>
+          <ReCAPTCHA sitekey={siteKey} onChange={handleCaptcha} />,
+          {captchaDOne ? <Form.Button>Submit</Form.Button> : <></>}
           {formsubmitted ? (
             <p className="invalid">✅ Form submitted successfully</p>
           ) : formsubmitted === null || formDeleted ? (
