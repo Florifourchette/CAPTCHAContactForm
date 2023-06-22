@@ -9,13 +9,6 @@
     font-size: 0.9em;
     padding: 0.5em 1.5em;
   }
-
-  .email {
-    width: 100%;
-  }
-  .email input {
-    width: 30%;
-  }
 }
 
 @media screen and (min-width: 500px) and (max-width: 799px) {
@@ -23,8 +16,8 @@
     padding: 0.5rem 3.5rem;
     height: 2rem;
     width: 80%;
-    max-width: 10rem;
-    min-width: 8rem;
+    max-width: 20rem;
+    min-width: 15rem;
   }
   input,
   textarea {

@@ -21,6 +21,7 @@ function App() {
   const [captchaDone, setCaptchaDone] = useState(false);
   const siteKey = process.env.REACT_APP_SITE_KEY;
 
+  //on change, all the useStates should first be back to their initial state. Then the value that has been changed is being checked the answer is being changed via a useState after the email and message validation
   const handleChange = (e) => {
     setFormDeleted(null);
     setformSubmitted(null);
@@ -41,6 +42,7 @@ function App() {
     }));
   };
 
+  //before submitting, the validation has to run and check if all conditions are met to submit the form if not, the form will not be submitted and a message will inform the user
   const handleSubmit = () => {
     if (
       emailValidated &&
@@ -51,12 +53,13 @@ function App() {
       answer.message !== ''
     ) {
       setformSubmitted(true);
-      console.log(answer);
+      console.log({ answer });
     } else {
       setformSubmitted(false);
     }
   };
 
+  //the deletion will set the answer and the validations variables to their inital states
   const handleDeletion = () => {
     setAnswer({
       vorname: '',
@@ -70,6 +73,7 @@ function App() {
     setFormDeleted(true);
   };
 
+  //checking captcha if captcha not checked then the submit button does not appear
   const handleCaptcha = () => {
     setCaptchaDone(true);
   };
@@ -100,6 +104,7 @@ function App() {
             value={answer.email}
             onChange={handleChange}
           />
+          {/* if email has been validated then valid message, if not, invalid message if null then no message */}
           {emailValidated ? (
             <p className="valid">
               ✅ Ihre E-Mail Adresse ist korrekt
@@ -131,6 +136,7 @@ function App() {
             : 500 - answer.message.toString().length}
           /500
         </span>
+        {/* There are 3 different possibilities for messageCharCount: null: nothing showing, true or false */}
         {messageCharCount ? (
           <p className="valid">✅ Your message is not too long</p>
         ) : messageCharCount === null ? (
@@ -139,11 +145,13 @@ function App() {
           <p className="invalid">❌ Your message is too long</p>
         )}
         <div className="buttonsContainer">
+          {/* either the captcha or the button are showing */}
           {!captchaDone ? (
             <ReCAPTCHA sitekey={siteKey} onChange={handleCaptcha} />
           ) : (
             <Form.Button>Submit</Form.Button>
           )}
+          {/* if the form has been validated then valid message, if not, invalid message if null then no message */}
           {formsubmitted ? (
             <p className="invalid">✅ Form submitted successfully</p>
           ) : formsubmitted === null || formDeleted ? (
