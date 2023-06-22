@@ -138,5 +138,7 @@ textarea {
   width: 100%;
 }
 .email input {
-  width: 30%;
+  width: 50%;
+  max-width: 40rem;
+  min-width: 5rem;
 }
